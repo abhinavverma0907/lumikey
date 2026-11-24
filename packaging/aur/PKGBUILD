@@ -10,7 +10,7 @@ depends=('python' 'python-numpy' 'python-gobject' 'gtk4' 'libadwaita' 'libpulse'
 install=lumikey.install
 makedepends=('python-build' 'python-installer' 'python-setuptools' 'python-wheel')
 source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz")
-sha256sums=('SKIP')  # replace with the real sum after tagging: updpkgsums
+sha256sums=('03f1e0ca26c356d01aa6388320648067e2f032f3e5384fcaa6cf968cc0c2d5d9')
 
 build() {
   cd "$pkgname-$pkgver"

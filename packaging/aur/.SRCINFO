@@ -1,0 +1,23 @@
+pkgbase = lumikey
+	pkgdesc = Animated, music- and typing-reactive RGB for Dynamic Lighting (HID LampArray) keyboards
+	pkgver = 0.1.0
+	pkgrel = 1
+	url = https://github.com/abhinavverma0907/lumikey
+	install = lumikey.install
+	arch = any
+	license = GPL-3.0-or-later
+	makedepends = python-build
+	makedepends = python-installer
+	makedepends = python-setuptools
+	makedepends = python-wheel
+	depends = python
+	depends = python-numpy
+	depends = python-gobject
+	depends = gtk4
+	depends = libadwaita
+	depends = libpulse
+	depends = polkit
+	source = lumikey-0.1.0.tar.gz::https://github.com/abhinavverma0907/lumikey/archive/refs/tags/v0.1.0.tar.gz
+	sha256sums = 03f1e0ca26c356d01aa6388320648067e2f032f3e5384fcaa6cf968cc0c2d5d9
+
+pkgname = lumikey
