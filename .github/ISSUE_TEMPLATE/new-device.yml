@@ -1,0 +1,36 @@
+name: Device report
+description: Tell us how Lumikey works (or doesn't) on your keyboard
+title: "[device] "
+labels: ["device"]
+body:
+  - type: input
+    id: model
+    attributes:
+      label: Keyboard model
+      placeholder: e.g. Logitech G515 Lightspeed
+    validations:
+      required: true
+  - type: dropdown
+    id: status
+    attributes:
+      label: How well does it work?
+      options:
+        - Everything works
+        - Lights work, but something is off (layout, colours, typing effects...)
+        - Lumikey sees it, but the lights don't change
+        - Lumikey doesn't see it at all
+    validations:
+      required: true
+  - type: textarea
+    id: probe
+    attributes:
+      label: Output of `lumikey probe`
+      description: In the app, menu → "Report my keyboard" copies this for you.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else?
+      description: What's wrong, photos or videos of the keyboard, distro, connection (USB / wireless / Bluetooth)

@@ -1,0 +1,3 @@
+post_install() {
+  echo ">>> Run 'lumikey setup' once (as your user) to give Lumikey access to your keyboard."
+}

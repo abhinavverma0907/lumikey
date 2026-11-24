@@ -1,0 +1,27 @@
+# Maintainer: Abhinav Verma
+pkgname=lumikey
+pkgver=0.1.0
+pkgrel=1
+pkgdesc="Animated, music- and typing-reactive RGB for Dynamic Lighting (HID LampArray) keyboards"
+arch=('any')
+url="https://github.com/abhinavverma0907/lumikey"
+license=('GPL-3.0-or-later')
+depends=('python' 'python-numpy' 'python-gobject' 'gtk4' 'libadwaita' 'libpulse' 'polkit')
+install=lumikey.install
+makedepends=('python-build' 'python-installer' 'python-setuptools' 'python-wheel')
+source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz")
+sha256sums=('SKIP')  # replace with the real sum after tagging: updpkgsums
+
+build() {
+  cd "$pkgname-$pkgver"
+  python -m build --wheel --no-isolation
+}
+
+package() {
+  cd "$pkgname-$pkgver"
+  python -m installer --destdir="$pkgdir" dist/*.whl
+  local data=lumikey/data
+  install -Dm644 "$data/lumikey.service" "$pkgdir/usr/lib/systemd/user/lumikey.service"
+  install -Dm644 "$data/io.github.abhinavverma0907.Lumikey.desktop" "$pkgdir/usr/share/applications/io.github.abhinavverma0907.Lumikey.desktop"
+  install -Dm644 "$data/io.github.abhinavverma0907.Lumikey.svg" "$pkgdir/usr/share/icons/hicolor/scalable/apps/io.github.abhinavverma0907.Lumikey.svg"
+}

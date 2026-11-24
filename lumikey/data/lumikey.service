@@ -1,0 +1,12 @@
+[Unit]
+Description=Lumikey keyboard lighting
+Documentation=https://github.com/abhinavverma0907/lumikey
+After=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/lumikey daemon
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=default.target
