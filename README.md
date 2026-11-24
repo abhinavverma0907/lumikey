@@ -46,10 +46,14 @@ please [report it](../../issues/new?template=new-device.yml) so this table grows
 
 ## Install
 
-### Arch / CachyOS / Manjaro (AUR)
+### Arch / CachyOS / Manjaro
+
+Build the package from this repo. You get a proper pacman package that installs and uninstalls cleanly
+(an AUR package is coming soon):
 
 ```sh
-yay -S lumikey
+git clone https://github.com/abhinavverma0907/lumikey
+cd lumikey/packaging/aur && makepkg -si
 ```
 
 ### Any distro (pipx)
